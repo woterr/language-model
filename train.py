@@ -56,7 +56,7 @@ def get_batch(split):
     x, y = x.to(device), y.to(device)
     return x, y
 
-# whatever this is
+# loss function 
 
 @torch.no_grad()
 def estimate_loss():
@@ -73,7 +73,7 @@ def estimate_loss():
     return out
 
 
-# werjfvc
+# dropout and heads
 
 class Head(nn.Module):
     def __init__(self, head_size):
@@ -191,6 +191,8 @@ class BigramLanguageModule(nn.Module):
         return idx
 
 model = BigramLanguageModule()
+
+# use gpu 
 m = model.to(device)
 
 
